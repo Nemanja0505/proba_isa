@@ -15,8 +15,8 @@ jobs:
         on:
           branch: master
         provider: heroku
-        api_key: $HEROKU_API_KEY2
-        app: reactisa
+        api_key: $HEROKU_API_KEY
+        app: pharmacies-system
 
     - language: java
       sudo: required
