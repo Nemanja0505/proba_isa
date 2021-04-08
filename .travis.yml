@@ -1,6 +1,3 @@
-script:
-  - cd back
-
 sudo: required
 language: java
 jdk: oraclejdk11
@@ -9,6 +6,8 @@ services:
   - postgresql
 
 before_install:
+  script:
+    - cd back
   - chmod +x mvnw
 
 addons:
