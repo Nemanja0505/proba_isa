@@ -1,27 +1,52 @@
-sudo: required
-language: java
-jdk: oraclejdk11
+matrix:
+  include:
+    sudo: required
+    language: java
+    jdk: oraclejdk11
 
-services:
-  - postgresql
+    services:
+      - postgresql
 
-before_install:
-  - cd back
-  - chmod +x mvnw
+    before_install:
+      - cd back
+      - chmod +x mvnw
 
-addons:
-  sonarcloud:
-  organization: nemanja0505
-  token: $SONAR_TOKEN
+    addons:
+      sonarcloud:
+      organization: nemanja0505
+      token: $SONAR_TOKEN
 
-script:
-  - ./mvnw clean install -DskipTests=false -B
-  - ./mvnw sonar:sonar -Dsonar.projectKey=$PROJECT_KEY -Dsonar.organization=nemanja0505 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+    script:
+      - ./mvnw clean install -DskipTests=false -B
+      - ./mvnw sonar:sonar -Dsonar.projectKey=$PROJECT_KEY -Dsonar.organization=nemanja0505 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
 
-dist: trusty
+    dist: trusty
 
-deploy:
-  provider: heroku
-  api_key: $HEROKU_API_KEY
-  app: probaisamaja
+    deploy:
+      provider: heroku
+      api_key: $HEROKU_API_KEY
+      app: probaisamaja
+   
+    java:
+      - stable
+    jobs:
+      allow_failures:
+        - java: nightly
+        fast_finish: true
+    
+    language: node_js
+    node_js:
+      - "stable"
+    cache:
+    directories:
+      - node_modules
+    script:
+      - cd front
+      - npm test
+      - npm run build || true
+ 
+    deploy:
+      provider: heroku
+      api_key: $HEROKU_API_KEY2
+      app: reactisa
