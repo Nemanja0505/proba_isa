@@ -21,7 +21,6 @@ script:
 dist: trusty
 
 deploy:
-  - cd back
   provider: heroku
   api_key: $HEROKU_API_KEY
   app: probaisamaja
