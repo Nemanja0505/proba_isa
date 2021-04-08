@@ -92,40 +92,7 @@ public class Pharmacy {
 	}
 
 
-	public Pharmacy(long id, String pharmacyName, Set<WorkerSchedule> workerSchedule, Address pharmacyAddress,
-			Set<PharmacyAdmin> pharmacyAdmins, Set<Dermatologist> dermatologistsInPharmacy,
-			Set<Pharmacist> pharmacistsInPharmacy, Set<DermatologistAppointment> dermatologistAppointmentsInPharmacy,
-			Set<PharmacyComplaint> pharmacyComplaints, double pharmacyAverageRating, String pharmacyDescription,
-			Set<Promotions> promotionsForPharmacy, Set<MedicineReservation> pharmacyMedicineReservations,
-			Set<PharmacyRating> pharmacyRatings) {
-		super();
-		this.id = id;
-		this.pharmacyName = pharmacyName;
-		this.workerSchedule = workerSchedule;
-		this.pharmacyAddress = pharmacyAddress;
-		//this.pharmacyAdmins = pharmacyAdmins;
-		this.dermatologistsInPharmacy = dermatologistsInPharmacy;
-		this.pharmacistsInPharmacy = pharmacistsInPharmacy;
-		this.dermatologistAppointmentsInPharmacy = dermatologistAppointmentsInPharmacy;
-		this.pharmacyComplaints = pharmacyComplaints;
-		this.pharmacyAverageRating = pharmacyAverageRating;
-		this.pharmacyDescription = pharmacyDescription;
-		this.promotionsForPharmacy = promotionsForPharmacy;
-		this.pharmacyMedicineReservations = pharmacyMedicineReservations;
-		this.pharmacyRatings = pharmacyRatings;
-	}
-
-
-	/*
-	public Set<PharmacyAdmin> getPharmacyAdmins() {
-		return pharmacyAdmins;
-	}
-
-	public void setPharmacyAdmins(Set<PharmacyAdmin> pharmacyAdmins) {
-		this.pharmacyAdmins = pharmacyAdmins;
-	}
-	*/
-	public long getId() {
+		public long getId() {
 		return id;
 	}
 
