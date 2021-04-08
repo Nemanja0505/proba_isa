@@ -21,9 +21,6 @@ script:
 
 dist: trusty
 
-before_deploy:
-  - cd back
-
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
