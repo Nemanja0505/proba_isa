@@ -6,7 +6,7 @@ cache:
    - node_modules
 script:
  - cd front
- - npm test
+ - npm install
  - npm run build || true
  
 deploy:
