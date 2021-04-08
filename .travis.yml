@@ -6,8 +6,7 @@ services:
   - postgresql
 
 before_install:
-  script:
-    - cd back
+  - cd back
   - chmod +x mvnw
 
 addons:
