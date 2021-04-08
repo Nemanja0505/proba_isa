@@ -42,13 +42,7 @@ public class Complaint {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Complaint(long id, Patient patientWithComplaint, String content, TypeOfComplaint typeOfComplaint) {
-		super();
-		this.id = id;
-		this.patientWithComplaint = patientWithComplaint;
-		this.content = content;
-		this.typeOfComplaint = typeOfComplaint;
-	}
+
 
 	public long getId() {
 		return id;
