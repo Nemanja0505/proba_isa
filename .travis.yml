@@ -2,8 +2,6 @@ sudo: required
 language: java
 jdk: oraclejdk11
 
-before_script: 
-  - cd back
 services:
   - postgresql
 
@@ -21,6 +19,9 @@ script:
   - ./mvnw sonar:sonar -Dsonar.projectKey=$PROJECT_KEY -Dsonar.organization=nemanja0505 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
 dist: trusty
+
+before_deploy:
+  - cd back
 
 deploy:
   provider: heroku
