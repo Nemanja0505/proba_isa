@@ -18,6 +18,7 @@ script:
   - ./mvnw clean install -DskipTests=false -B
   - ./mvnw sonar:sonar -Dsonar.projectKey=$PROJECT_KEY -Dsonar.organization=nemanja0505 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
+
 dist: trusty
 
 before_deploy:
