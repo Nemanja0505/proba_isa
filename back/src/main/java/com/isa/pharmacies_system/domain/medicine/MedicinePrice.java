@@ -47,16 +47,6 @@ public class MedicinePrice {
 		
 	}
 	
-	public MedicinePrice(long id, Instant medicinePriceStartTime, Instant medicnePriceEndTime, double medicinePrice,
-			Medicine medicineWithPrices, PriceList priceListForMedicine) {
-		super();
-		this.id = id;
-		this.medicinePriceStartTime = medicinePriceStartTime;
-		this.medicnePriceEndTime = medicnePriceEndTime;
-		this.medicinePrice = medicinePrice;
-		this.medicineWithPrices = medicineWithPrices;
-		this.priceListForMedicine = priceListForMedicine;
-	}
 
 
 	public long getId() {
