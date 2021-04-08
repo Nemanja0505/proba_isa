@@ -1,15 +1,17 @@
-language: node_js
-node_js:
- - "stable"
-cache:
- directories:
-   - node_modules
-script:
- - cd front
- - npm install
- - npm run build || true
+matrix:
+  include:
+    language: node_js
+    node_js:
+      - "stable"
+    cache:
+      directories:
+        - node_modules
+    script:
+      - cd front
+      - npm install
+      - npm run build || true
  
-deploy:
- provider: heroku
- api_key: $HEROKU_API_KEY2
- app: reactisa
+    deploy:
+      provider: heroku
+      api_key: $HEROKU_API_KEY2
+      app: reactisa
