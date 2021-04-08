@@ -1,4 +1,4 @@
-matrix:
+jobs:
   include:
     - language: node_js
       node_js:
@@ -16,8 +16,9 @@ matrix:
         api_key: $HEROKU_API_KEY2
         app: reactisa
     
-    sudo: required
+    
     - language: java
+      sudo: required
       jdk: oraclejdk11
       services:
         - postgresql
